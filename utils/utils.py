@@ -2,6 +2,8 @@
 
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
+import pickle
+
 
 class MultiColumnLabelEncoder:
     def __init__(self,columns = None):
@@ -57,3 +59,14 @@ def combine_split(train, test, rem_col=[]):
     dtt = pd.concat([dtt, test[rem_col[0]]], axis=1)
 
     return dtr, dtt
+
+
+def write_data(PATH, data):
+    with open(PATH, 'wb') as fp:
+        pickle.dump(data, fp, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+def read_data(PATH):
+    with open(PATH, 'rb') as fp:
+        data = pickle.load(fp)
+    return data
