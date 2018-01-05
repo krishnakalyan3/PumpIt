@@ -45,6 +45,7 @@ if __name__ == '__main__':
 
     train_x, test_x = missing(train_x, test_x)
 
+    print('#### Writing ####')
     write_data(config.a_xtrain, train_x)
     write_data(config.a_xtest, test_x)
     write_data(config.a_ytest, train_y)
