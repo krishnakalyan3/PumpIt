@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import numpy as np
 from sklearn.preprocessing import Imputer
 import sys
 sys.path.append("../")
@@ -9,10 +8,8 @@ from param_config import config
 from sklearn.preprocessing import LabelEncoder
 from utils import read_data
 from utils import write_data
-
-
-# TODO
-# handle date
+import numpy as np
+np.random.seed(config.no_clusters)
 
 
 def imputer(x_train, x_test):
@@ -64,6 +61,6 @@ if __name__ == '__main__':
 
     assert len(train_x.columns) == len(test_x.columns)
 
-    print('#### Writing ####')
+    print('#### Writing Pickle 02 ####')
     write_data(config.b_xtrain, train_x)
     write_data(config.b_xtest, test_x)

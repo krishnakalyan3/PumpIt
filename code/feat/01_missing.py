@@ -5,6 +5,8 @@ sys.path.append("../")
 import pandas as pd
 from param_config import config
 from utils import write_data
+import numpy as np
+np.random.seed(config.no_clusters)
 
 
 def get_missing(data):
@@ -45,7 +47,7 @@ if __name__ == '__main__':
 
     train_x, test_x = missing(train_x, test_x)
 
-    print('#### Writing ####')
+    print('#### Writing Pickle 01 ####')
     write_data(config.a_xtrain, train_x)
     write_data(config.a_xtest, test_x)
     write_data(config.a_ytest, train_y)
