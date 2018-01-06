@@ -16,19 +16,23 @@ def date_objects(df):
     year = date.apply(lambda x: x.year)
     month = date.apply(lambda x: x.month)
     day = date.apply(lambda x: x.day)
-    return year, month, day
+    day_week = date.apply(lambda x: x.dayofweek)
+
+    return year, month, day, day_week
 
 
 def date_process(x_train, x_test):
-    y1, m1, d1 = date_objects(x_train)
+    y1, m1, d1, dw1 = date_objects(x_train)
     x_train['year'] = y1
     x_train['month'] = m1
     x_train['day'] = d1
+    x_train['day_week'] = dw1
 
-    y2, m2, d2 = date_objects(x_test)
-    x_train['year'] = y2
-    x_train['month'] = m2
-    x_train['day'] = d2
+    y2, m2, d2, dw2 = date_objects(x_test)
+    x_test['year'] = y2
+    x_test['month'] = m2
+    x_test['day'] = d2
+    x_test['day_week'] = dw2
 
     return x_train, x_test
 

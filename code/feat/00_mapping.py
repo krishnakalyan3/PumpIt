@@ -1,5 +1,3 @@
-
-
 data = {'id': 'cat',
         'amount_tsh': 'num',
         'date_recorded': 'cat',
@@ -57,4 +55,60 @@ data = {'id': 'cat',
         # dates
         'year': 'cat',
         'month': 'cat',
-        'day': 'cat'}
+        'day': 'cat',
+        'day_week': 'cat'
+        }
+
+data_card = {'id': 50,
+             'date_recorded': 50,
+             'funder': 50,
+             'installer': 50,
+             'wpt_name': 50,
+             'num_private': 50,
+             'basin': 9,
+             'subvillage': 50,
+             'region': 21,
+             'region_code': 20,
+             'district_code': 20,
+             'lga': 50,
+             'ward': 50,
+             'public_meeting': 2,
+             'scheme_management': 12,
+             'scheme_name': 50,
+             'permit': 2,
+             'construction_year': 55,
+             'extraction_type': 18,
+             'extraction_type_group': 13,
+             'extraction_type_class': 7,
+             'management': 12,
+             'management_group': 5,
+             'payment': 7,
+             'payment_type': 7,
+             'water_quality': 8,
+             'quality_group': 5,
+             'quantity': 5,
+             'quantity_group': 5,
+             'source': 10,
+             'source_type': 7,
+             'source_class': 3,
+             'waterpoint_type': 7,
+             'waterpoint_type_group': 6,
+
+             # missing columns
+             'missing_funder': 2,
+             'missing_installer': 2,
+             'missing_subvillage': 2,
+             'missing_public_meeting': 2,
+             'missing_scheme_management': 2,
+             'missing_scheme_name': 2,
+             'missing_permit': 2,
+
+             # kmeans
+             'kmeans_lat_long': 5,
+
+             # dates
+             'year': 6,
+             'month': 12,
+             'day': 30,
+             'day_week': 7
+             }
