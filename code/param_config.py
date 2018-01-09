@@ -28,11 +28,27 @@ class Param:
         self.c_xtrain = self.pickle_dir + self.pkl_name + '03_' + 'xtrain_' + 'kmeans.pkl'
         self.c_xtest = self.pickle_dir + self.pkl_name + '03_' + 'xtest_' + 'kmeans.pkl'
 
+        # 04
+        self.d_xtrain = self.pickle_dir + self.pkl_name + '04_' + 'xtrain_' + 'date.pkl'
+        self.d_xtest = self.pickle_dir + self.pkl_name + '04_' + 'xtest_' + 'date.pkl'
+
 
 # TODO
-# handle date
+# Algorithms
+    # XGBoost
+    # Light GBM
+    # Neural Network
+
+
 # Over sampling
 # make all plots
 # random forest
+# interactions
+# PCA
+# LSA
+# TF-IDF
+# See if dropping outliers help
+# numerical variables, use box plot and scatter plot
+# classification tasks, plot the data with points colored according to their labels
 
 config = Param()
