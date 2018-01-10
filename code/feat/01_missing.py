@@ -6,7 +6,8 @@ import pandas as pd
 from param_config import config
 from utils import write_data
 import numpy as np
-np.random.seed(config.no_clusters)
+from sklearn.utils import shuffle
+np.random.seed(config.set_seed)
 
 
 def get_missing(data):
@@ -45,6 +46,8 @@ if __name__ == '__main__':
     test_x = pd.read_csv(config.test_file)
     train_y = pd.read_csv(config.target_file)
 
+    # Shuffle data
+    train_x, train_y = shuffle(train_x, train_y, random_state=config.set_seed)
     train_x, test_x = missing(train_x, test_x)
 
     print('#### Writing Pickle 01 ####')

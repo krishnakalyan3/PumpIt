@@ -1,3 +1,8 @@
+
+target_mapping = {'functional':0,
+                  'functional needs repair':1,
+                  'non functional':2}
+
 data = {'id': 'cat',
         'amount_tsh': 'num',
         'date_recorded': 'cat',

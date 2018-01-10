@@ -11,7 +11,6 @@ class Param:
         self.test_file = self.data_folder + 'original/' + 'test_set_values.csv'
         self.target_file = self.data_folder + 'original/' + 'train_set_labels.csv'
         self.pickle_dir = self.data_folder + 'pickle_files/'
-        #self.imputation_stratergy = 'most_frequent'
         self.no_clusters = 10
         self.pkl_name = 'exp1_'
 
@@ -23,22 +22,28 @@ class Param:
         # 02 impute and encode
         self.b_xtrain = self.pickle_dir + self.pkl_name + '02_' + 'xtrain_' + 'impute.pkl'
         self.b_xtest = self.pickle_dir + self.pkl_name + '02_' + 'xtest_' + 'impute.pkl'
+        self.b_ytest = self.pickle_dir + self.pkl_name + '02_' + 'ytrain_' + 'missing.pkl'
 
         # 03 kmeans
         self.c_xtrain = self.pickle_dir + self.pkl_name + '03_' + 'xtrain_' + 'kmeans.pkl'
         self.c_xtest = self.pickle_dir + self.pkl_name + '03_' + 'xtest_' + 'kmeans.pkl'
 
-        # 04
+        # 04 data augmentation
         self.d_xtrain = self.pickle_dir + self.pkl_name + '04_' + 'xtrain_' + 'date.pkl'
         self.d_xtest = self.pickle_dir + self.pkl_name + '04_' + 'xtest_' + 'date.pkl'
 
 
+
+        # self.imputation_stratergy = 'most_frequent'
+
 # TODO
+# Finish Cat EDA
+
 # Algorithms
     # XGBoost
-    # Light GBM
     # Neural Network
 
+# Predict on test set and train
 
 # Over sampling
 # make all plots

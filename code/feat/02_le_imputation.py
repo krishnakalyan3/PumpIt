@@ -8,6 +8,7 @@ from param_config import config
 from sklearn.preprocessing import LabelEncoder
 from utils import read_data
 from utils import write_data
+from mapping import target_mapping
 import numpy as np
 np.random.seed(config.no_clusters)
 
@@ -52,9 +53,17 @@ def most_frequent(x_train):
     return na_cols
 
 
+def target_encoding(y_train):
+    y_train['status_group'] = [target_mapping[i] for i in y_train['status_group']]
+    return y_train
+
+
 if __name__ == '__main__':
     train_x = read_data(config.a_xtrain)
     test_x = read_data(config.a_xtest)
+
+    train_y = pd.read_csv(config.target_file)
+    train_y = target_encoding(train_y)
 
     impute_data = most_frequent(train_x)
     train_x, test_x = label_encoding(train_x, test_x, impute_data)
@@ -64,3 +73,4 @@ if __name__ == '__main__':
     print('#### Writing Pickle 02 ####')
     write_data(config.b_xtrain, train_x)
     write_data(config.b_xtest, test_x)
+    write_data(config.b_ytest, train_y)
