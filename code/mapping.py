@@ -64,8 +64,13 @@ data = {'id': 'cat',
         'day_week': 'cat'
         }
 
-data_card = {'id': 50,
-             'date_recorded': 50,
+data_card = {'date_recorded': 50,
+             'funder': 50,
+             'installer': 50,
+             'wpt_name': 50,
+             'num_private': 50}
+
+data_card1 = {'date_recorded': 50,
              'funder': 50,
              'installer': 50,
              'wpt_name': 50,
@@ -81,7 +86,7 @@ data_card = {'id': 50,
              'scheme_management': 12,
              'scheme_name': 50,
              'permit': 2,
-             'construction_year': 55,
+             'construction_year': 50,
              'extraction_type': 18,
              'extraction_type_group': 13,
              'extraction_type_class': 7,

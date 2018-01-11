@@ -44,13 +44,11 @@ def missing(x_train, x_test):
 if __name__ == '__main__':
     train_x = pd.read_csv(config.train_file)
     test_x = pd.read_csv(config.test_file)
-    train_y = pd.read_csv(config.target_file)
 
-    # Shuffle data
-    train_x, train_y = shuffle(train_x, train_y, random_state=config.set_seed)
+    # Shuffle training data
+    train_x = shuffle(train_x, random_state=config.set_seed)
     train_x, test_x = missing(train_x, test_x)
 
-    print('#### Writing Pickle 01 ####')
+    print('#### Writing Pickle 01: Missing ####')
     write_data(config.a_xtrain, train_x)
     write_data(config.a_xtest, test_x)
-    write_data(config.a_ytest, train_y)

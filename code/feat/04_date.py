@@ -6,9 +6,8 @@ from param_config import config
 from utils import read_data
 from utils import write_data
 import numpy as np
-from datetime import datetime
 import pandas as pd
-np.random.seed(config.no_clusters)
+np.random.seed(config.set_seed)
 
 
 def date_objects(df):
@@ -37,12 +36,29 @@ def date_process(x_train, x_test):
     return x_train, x_test
 
 
+def join_df(left, right, left_on, right_on=None, suffix='_y'):
+    if right_on is None: right_on = left_on
+    return left.merge(right, how='left', left_on=left_on, right_on=right_on,
+                      suffixes=("", suffix))
+
+
 if __name__ == '__main__':
     train_x = read_data(config.c_xtrain)
+    train_y = read_data(config.b_ytrain)
     test_x = read_data(config.c_xtest)
 
-    x_train, x_test = date_process(train_x, test_x)
+    # Date split year, month, day, day_of_week
+    # merge X and y to a single df
+    train_x, test_x = date_process(train_x, test_x)
+    train_merge = join_df(train_x, train_y, 'id', 'id')
 
-    print('#### Writing Pickle 04 ####')
+    # Drop id column
+    # split x, y train
+    train = train_merge.drop(['id'], axis=1)
+    train_y = train['status_group']
+    train_x = train.drop(['status_group'], axis=1)
+
+    print('#### Writing Pickle 04: Date ####')
     write_data(config.d_xtrain, train_x)
     write_data(config.d_xtest, test_x)
+    write_data(config.d_ytrain, train_y)

@@ -6,10 +6,8 @@ from param_config import config
 from utils import read_data
 from utils import write_data
 import numpy as np
-from datetime import datetime
-import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-np.random.seed(config.no_clusters)
+np.random.seed(config.set_seed)
 
 
 def model(X, y, samples=10000):

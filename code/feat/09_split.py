@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+
+import sys
+sys.path.append("../")
+from param_config import config
+from sklearn.model_selection import train_test_split
+from utils import read_data
+from utils import write_data
+import numpy as np
+np.random.seed(config.set_seed)
+
+
+def join_split(X, y):
+    x_train, x_val, y_train, y_val = train_test_split(X, y, stratify=y, test_size=config.train_val_split_pct)
+    return x_train, y_train, x_val, y_val
+
+
+if __name__ == '__main__':
+    train_x = read_data(config.d_xtrain)
+    train_y = read_data(config.d_ytrain)
+
+    # split data into train and validation
+    # 20 percent stratified
+    x_train, y_train, x_val, y_val = join_split(train_x, train_y)
+
+    print('#### Writing Pickle 05: Split ####')
+    write_data(config.e_xtrain, x_train)
+    write_data(config.e_ytrain, y_train)
+    write_data(config.e_xval, x_val)
+    write_data(config.e_yval, y_val)

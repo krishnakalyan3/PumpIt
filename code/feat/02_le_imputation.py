@@ -10,7 +10,7 @@ from utils import read_data
 from utils import write_data
 from mapping import target_mapping
 import numpy as np
-np.random.seed(config.no_clusters)
+np.random.seed(config.set_seed)
 
 
 def imputer(x_train, x_test):
@@ -30,17 +30,14 @@ def label_encoding(x_train, x_test, impute_data):
     for c in x_train.columns:
         if x_train[c].dtype == 'object':
 
-            if c in ['date_recorded']:
-                pass
-            else:
-                print('###### Encoding {} #####'.format(c))
-                if c in impute_data:
-                    x_train[c], x_test[c] = x_train[c].fillna(impute_data[c]), x_test[c].fillna(impute_data[c])
+            print('###### Encoding {} #####'.format(c))
+            if c in impute_data:
+                x_train[c], x_test[c] = x_train[c].fillna(impute_data[c]), x_test[c].fillna(impute_data[c])
 
-                raw_data = pd.concat([x_train[c], x_test[c]])
-                lbl.fit(raw_data.values)
-                x_train[c] = lbl.transform(list(x_train[c].values))
-                x_test[c] = lbl.transform(list(x_test[c].values))
+            raw_data = pd.concat([x_train[c], x_test[c]])
+            lbl.fit(raw_data.values)
+            x_train[c] = lbl.transform(list(x_train[c].values))
+            x_test[c] = lbl.transform(list(x_test[c].values))
 
     return x_train, x_test
 
@@ -70,7 +67,7 @@ if __name__ == '__main__':
 
     assert len(train_x.columns) == len(test_x.columns)
 
-    print('#### Writing Pickle 02 ####')
+    print('#### Writing Pickle 02: Imputation ####')
     write_data(config.b_xtrain, train_x)
     write_data(config.b_xtest, test_x)
-    write_data(config.b_ytest, train_y)
+    write_data(config.b_ytrain, train_y)

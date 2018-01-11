@@ -7,7 +7,7 @@ from utils import read_data
 from utils import write_data
 import numpy as np
 from sklearn.cluster import KMeans
-np.random.seed(config.no_clusters)
+np.random.seed(config.set_seed)
 
 
 def kmeans(x_train, x_test):
@@ -29,6 +29,9 @@ if __name__ == '__main__':
 
     x_train, x_test = kmeans(train_x, test_x)
 
-    print('#### Writing Pickle 03 ####')
+    print('#### Writing Pickle 03: Kmeans ####')
     write_data(config.c_xtrain, train_x)
     write_data(config.c_xtest, test_x)
+
+
+# Try https://hdbscan.readthedocs.io/en/latest/
