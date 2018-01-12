@@ -43,9 +43,9 @@ def join_df(left, right, left_on, right_on=None, suffix='_y'):
 
 
 if __name__ == '__main__':
-    train_x = read_data(config.c_xtrain)
-    train_y = read_data(config.b_ytrain)
-    test_x = read_data(config.c_xtest)
+    train_x = read_data(config.a_xtrain)
+    train_y = pd.read_csv(config.target_file)
+    test_x = read_data(config.a_xtest)
 
     # Date split year, month, day, day_of_week
     # merge X and y to a single df
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     train_y = train['status_group']
     train_x = train.drop(['status_group'], axis=1)
 
-    print('#### Writing Pickle 04: Date ####')
-    write_data(config.d_xtrain, train_x)
-    write_data(config.d_xtest, test_x)
-    write_data(config.d_ytrain, train_y)
+    print('#### Writing Pickle 02: Date ####')
+    write_data(config.b_xtrain, train_x)
+    write_data(config.b_xtest, test_x)
+    write_data(config.b_ytrain, train_y)

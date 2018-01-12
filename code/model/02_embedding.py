@@ -26,6 +26,12 @@ def embedding_network(input_shape, embed_shape):
     return model
 
 
+def dense():
+    model = Sequential()
+    model.add(Dense(1, input_dim=1))
+    return model
+
+
 def model_all(x_train):
     models = []
     for embed, col_name in enumerate(data_card):
@@ -64,7 +70,7 @@ def embedding(x_train, y_train):
     exit()
 
 
-    model = embedding_network(cardinality, 50)
+    #model = embedding_network(cardinality, 50)
     #model.fit(x_train[cc], epochs=20, validation_split=0.3, batch_size=64)
     return model
 

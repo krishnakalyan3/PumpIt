@@ -20,7 +20,7 @@ class Param:
         self.a_xtrain = self.pickle_dir + self.pkl_name + '01_' + 'xtrain_' + 'missing.pkl'
         self.a_xtest = self.pickle_dir + self.pkl_name + '01_' + 'xtest_' + 'missing.pkl'
 
-        # 02 impute and encode
+        # 02 date
         self.b_xtrain = self.pickle_dir + self.pkl_name + '02_' + 'xtrain_' + 'impute.pkl'
         self.b_xtest = self.pickle_dir + self.pkl_name + '02_' + 'xtest_' + 'impute.pkl'
         self.b_ytrain = self.pickle_dir + self.pkl_name + '02_' + 'ytrain_' + 'missing.pkl'
@@ -29,7 +29,7 @@ class Param:
         self.c_xtrain = self.pickle_dir + self.pkl_name + '03_' + 'xtrain_' + 'kmeans.pkl'
         self.c_xtest = self.pickle_dir + self.pkl_name + '03_' + 'xtest_' + 'kmeans.pkl'
 
-        # 04 data augmentation
+        # 04 label encoding
         self.d_xtrain = self.pickle_dir + self.pkl_name + '04_' + 'xtrain_' + 'date.pkl'
         self.d_xtest = self.pickle_dir + self.pkl_name + '04_' + 'xtest_' + 'date.pkl'
         self.d_ytrain = self.pickle_dir + self.pkl_name + '04_' + 'ytrain_' + 'date.pkl'
