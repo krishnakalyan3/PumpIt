@@ -55,6 +55,8 @@ if __name__ == '__main__':
     # Drop id column
     # split x, y train
     train = train_merge.drop(['id'], axis=1)
+    test_x = test_x.drop(['id'], axis=1)
+
     train_y = train['status_group']
     train_x = train.drop(['status_group'], axis=1)
 

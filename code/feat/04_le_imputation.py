@@ -51,7 +51,7 @@ def most_frequent(x_train):
 
 
 def target_encoding(y_train):
-    y_train = [target_mapping[i] for i in y_train['status_group']]
+    y_train = [target_mapping[i] for i in y_train]
     return y_train
 
 
@@ -60,18 +60,13 @@ if __name__ == '__main__':
     test_x = read_data(config.c_xtest)
 
     train_y = read_data(config.b_ytrain)
-    print(train_y.head())
-
     train_y = target_encoding(train_y)
-    print(train_y.head())
-    exit()
 
     impute_data = most_frequent(train_x)
     train_x, test_x = label_encoding(train_x, test_x, impute_data)
 
     assert len(train_x.columns) == len(test_x.columns)
 
-    print('#### Writing Pickle 04: Imputation ####')
     write_data(config.d_xtrain, train_x)
     write_data(config.d_xtest, test_x)
     write_data(config.d_ytrain, train_y)
