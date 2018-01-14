@@ -1,7 +1,9 @@
 
-target_mapping = {'functional':0,
-                  'functional needs repair':1,
-                  'non functional':2}
+target_mapping = {'functional': 0,
+                  'functional needs repair': 1,
+                  'non functional': 2}
+
+inverse_mapping = {0: 'functional', 1: 'functional needs repair', 2: 'non functional'}
 
 data = {'id': 'cat',
         'amount_tsh': 'num',

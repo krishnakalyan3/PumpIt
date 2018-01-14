@@ -43,6 +43,10 @@ def join_df(left, right, left_on, right_on=None, suffix='_y'):
 
 
 def drop_cols(x_train, x_test):
+    # id is unique
+    # recorded_by has 1 cardinality
+    # quantity_group is similar to quantity
+    #
     drop = ['status_group', 'id', 'quantity_group', 'recorded_by']
     for i in drop:
         if i == 'status_group':
