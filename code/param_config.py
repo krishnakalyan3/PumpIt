@@ -21,18 +21,18 @@ class Param:
         self.a_xtest = self.pickle_dir + self.pkl_name + '01_' + 'xtest_' + 'missing.pkl'
 
         # 02 date
-        self.b_xtrain = self.pickle_dir + self.pkl_name + '02_' + 'xtrain_' + 'impute.pkl'
-        self.b_xtest = self.pickle_dir + self.pkl_name + '02_' + 'xtest_' + 'impute.pkl'
-        self.b_ytrain = self.pickle_dir + self.pkl_name + '02_' + 'ytrain_' + 'missing.pkl'
+        self.b_xtrain = self.pickle_dir + self.pkl_name + '02_' + 'xtrain_' + 'date.pkl'
+        self.b_xtest = self.pickle_dir + self.pkl_name + '02_' + 'xtest_' + 'date.pkl'
+        self.b_ytrain = self.pickle_dir + self.pkl_name + '02_' + 'ytrain_' + 'date.pkl'
 
         # 03 kmeans
         self.c_xtrain = self.pickle_dir + self.pkl_name + '03_' + 'xtrain_' + 'kmeans.pkl'
         self.c_xtest = self.pickle_dir + self.pkl_name + '03_' + 'xtest_' + 'kmeans.pkl'
 
         # 04 label encoding
-        self.d_xtrain = self.pickle_dir + self.pkl_name + '04_' + 'xtrain_' + 'date.pkl'
-        self.d_xtest = self.pickle_dir + self.pkl_name + '04_' + 'xtest_' + 'date.pkl'
-        self.d_ytrain = self.pickle_dir + self.pkl_name + '04_' + 'ytrain_' + 'date.pkl'
+        self.d_xtrain = self.pickle_dir + self.pkl_name + '04_' + 'xtrain_' + 'le.pkl'
+        self.d_xtest = self.pickle_dir + self.pkl_name + '04_' + 'xtest_' + 'le.pkl'
+        self.d_ytrain = self.pickle_dir + self.pkl_name + '04_' + 'ytrain_' + 'le.pkl'
 
         # 09 split
         self.e_xtrain = self.pickle_dir + self.pkl_name + '09_' + 'xtrain_' + 'split.pkl'
@@ -40,8 +40,7 @@ class Param:
         self.e_xval = self.pickle_dir + self.pkl_name + '09_' + 'xval_' + 'split.pkl'
         self.e_yval = self.pickle_dir + self.pkl_name + '09_' + 'yval_' + 'split.pkl'
 
-        #### Extra Feat
-
+        # Extra Feat #
         # 01 PCA
         self.pca_xtrain = self.pickle_dir + self.pkl_name + '01_' + 'xtrain_' + 'pca.pkl'
         self.pca_xtest = self.pickle_dir + self.pkl_name + '01_' + 'xtest_' + 'pca.pkl'
@@ -72,7 +71,6 @@ class Param:
 # clipping outlier
 # See if dropping outliers help
 # classification tasks, plot the data with points colored according to their labels
-
     # Done
     # numerical variables, use box plot and scatter plot
 

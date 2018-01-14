@@ -42,6 +42,18 @@ def join_df(left, right, left_on, right_on=None, suffix='_y'):
                       suffixes=("", suffix))
 
 
+def drop_cols(x_train, x_test):
+    drop = ['status_group', 'id', 'quantity_group', 'recorded_by']
+    for i in drop:
+        if i == 'status_group':
+            x_train = x_train.drop(i, axis=1)
+        else:
+            x_train = x_train.drop(i, axis=1)
+            x_test = x_test.drop(i, axis=1)
+
+    return x_train, x_test
+
+
 if __name__ == '__main__':
     train_x = read_data(config.a_xtrain)
     train_y = pd.read_csv(config.target_file)
@@ -51,14 +63,10 @@ if __name__ == '__main__':
     # merge X and y to a single df
     train_x, test_x = date_process(train_x, test_x)
     train_merge = join_df(train_x, train_y, 'id', 'id')
+    train_y = train_merge['status_group']
 
-    # Drop id column
-    # split x, y train
-    train = train_merge.drop(['id'], axis=1)
-    test_x = test_x.drop(['id'], axis=1)
-
-    train_y = train['status_group']
-    train_x = train.drop(['status_group'], axis=1)
+    # Drop Columns
+    train_x, test_x = drop_cols(train_merge, test_x)
 
     print('#### Writing Pickle 02: Date ####')
     write_data(config.b_xtrain, train_x)

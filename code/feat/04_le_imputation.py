@@ -67,6 +67,7 @@ if __name__ == '__main__':
 
     assert len(train_x.columns) == len(test_x.columns)
 
+    print('#### Writing Pickle 04: Imputation ####')
     write_data(config.d_xtrain, train_x)
     write_data(config.d_xtest, test_x)
     write_data(config.d_ytrain, train_y)
