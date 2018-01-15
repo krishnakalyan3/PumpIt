@@ -6,7 +6,8 @@ class Param:
     def __init__(self):
 
         self.set_seed = 123
-        self.data_folder = '/Users/krishnakalyan3/Educational/PumpIt/data/'
+        #self.data_folder = '/Users/krishnakalyan3/Educational/PumpIt/data/'
+        self.data_folder = '/home/ubuntu/PumpIt/data/'
         self.sample = self.data_folder + 'original/' + 'SubmissionFormat.csv'
         self.train_file = self.data_folder + 'original/' + 'train_set_values.csv'
         self.test_file = self.data_folder + 'original/' + 'test_set_values.csv'
@@ -15,7 +16,6 @@ class Param:
         self.submit_dir = self.data_folder + 'submit/'
         self.grid_report_rf = self.data_folder + 'grid_report/' + 'grid_rf.pkl'
         self.grid_report_xg = self.data_folder + 'grid_report/' + 'grid_xg.pkl'
-
 
         self.no_clusters = 10
         self.pca_components = 3
