@@ -31,7 +31,7 @@ param_grid = {"criterion": ["gini", "entropy"],
 
 def grid_model(params, X, y, cv=5):
     rf = RandomForestClassifier(max_features='auto', oob_score=False, class_weight='balanced',
-                                random_state=config.set_seed, n_jobs=-1, verbose=100)
+                                random_state=config.set_seed, n_jobs=-1, verbose=0)
     clf = GridSearchCV(estimator=rf, param_grid=params, scoring='accuracy', cv=cv, n_jobs=-1)
     clf.fit(X, y)
 

@@ -12,20 +12,19 @@ sys.path.append(UTILS)
 from utils import read_data, write_data, metrics, submit
 from param_config import config
 
+# Early Stopping
 
 params_grid = {
     'max_depth': [1, 3, 6, 9],
-    'num_boost_round': [100, 250, 500],
     'subsample': [0.4, 0.6, 0.8, 1.0],
     'n_estimators': [5, 10, 25, 50, 100],
     'min_child_weight': [1, 3, 5],
     'learning_rate': [0.1, 0.01],
-    'colsample_bytree': [0.5, 0.6, 0.7, 0.8]
+    'colsample_bytree': [0.5, 0.7, 0.9]
 }
 
 params_fixed = {
-    'objective': 'multi:softmax',
-    'silent': 1
+    'objective': 'multi:softmax'
 }
 
 
@@ -33,7 +32,7 @@ def grid_model(X, y, cv=5):
     clf = GridSearchCV(
         estimator=XGBClassifier(**params_fixed, seed=config.set_seed),
         param_grid=params_grid,
-        verbose=100,
+        verbose=0,
         cv=cv,
         scoring='accuracy'
     )
