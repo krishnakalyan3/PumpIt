@@ -4,8 +4,7 @@ import numpy as np
 from xgboost.sklearn import XGBClassifier
 from sklearn.grid_search import GridSearchCV, RandomizedSearchCV
 
-
-UTILS = '/Users/krishnakalyan3/Educational/PumpIt/code/'
+UTILS = '../'
 import sys
 sys.path.append(UTILS)
 # Custom imports

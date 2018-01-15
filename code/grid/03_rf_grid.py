@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 
-UTILS = '/Users/krishnakalyan3/Educational/PumpIt/code/'
+UTILS = '../'
 import sys
 sys.path.append(UTILS)
 # Custom imports
