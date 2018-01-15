@@ -19,15 +19,15 @@ def join_split(X, y):
 # Try imbalance learn
 
 if __name__ == '__main__':
-    train_x = read_data(config.d_xtrain)
-    train_y = read_data(config.d_ytrain)
+    train_x = read_data(config.e_xtrain)
+    train_y = read_data(config.e_ytrain)
 
     # split data into train and validation
     # 20 percent stratified
     x_train, y_train, x_val, y_val = join_split(train_x, train_y)
 
     print('#### Writing Pickle 09: Split ####')
-    write_data(config.e_xtrain, x_train)
-    write_data(config.e_ytrain, y_train)
-    write_data(config.e_xval, x_val)
-    write_data(config.e_yval, y_val)
+    write_data(config.f_xtrain, x_train)
+    write_data(config.f_ytrain, y_train)
+    write_data(config.f_xval, x_val)
+    write_data(config.f_yval, y_val)

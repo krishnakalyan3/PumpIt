@@ -14,5 +14,8 @@ os.system(cmd)
 cmd = "./04_le_imputation.py"
 os.system(cmd)
 
+cmd = "./05_imbalance.py"
+os.system(cmd)
+
 cmd = "./09_split.py"
 os.system(cmd)

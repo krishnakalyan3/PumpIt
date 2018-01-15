@@ -4,10 +4,10 @@
 class Param:
 
     def __init__(self):
-
         self.set_seed = 123
-        #self.data_folder = '/Users/krishnakalyan3/Educational/PumpIt/data/'
-        self.data_folder = '/home/ubuntu/PumpIt/data/'
+        self.verbose = 100
+        self.data_folder = '/Users/krishnakalyan3/Educational/PumpIt/data/'
+        #self.data_folder = '/home/ubuntu/PumpIt/data/'
         self.sample = self.data_folder + 'original/' + 'SubmissionFormat.csv'
         self.train_file = self.data_folder + 'original/' + 'train_set_values.csv'
         self.test_file = self.data_folder + 'original/' + 'test_set_values.csv'
@@ -40,22 +40,30 @@ class Param:
         self.d_xtest = self.pickle_dir + self.pkl_name + '04_' + 'xtest_' + 'le.pkl'
         self.d_ytrain = self.pickle_dir + self.pkl_name + '04_' + 'ytrain_' + 'le.pkl'
 
+        # 05 imbalance by over sampling
+        self.e_xtrain = self.pickle_dir + self.pkl_name + '05_' + 'xtrain_' + 'imbal.pkl'
+        self.e_ytrain = self.pickle_dir + self.pkl_name + '05_' + 'ytrain_' + 'imbal.pkl'
+
         # 09 split
-        self.e_xtrain = self.pickle_dir + self.pkl_name + '09_' + 'xtrain_' + 'split.pkl'
-        self.e_ytrain = self.pickle_dir + self.pkl_name + '09_' + 'ytrain_' + 'split.pkl'
-        self.e_xval = self.pickle_dir + self.pkl_name + '09_' + 'xval_' + 'split.pkl'
-        self.e_yval = self.pickle_dir + self.pkl_name + '09_' + 'yval_' + 'split.pkl'
+        self.f_xtrain = self.pickle_dir + self.pkl_name + '09_' + 'xtrain_' + 'split.pkl'
+        self.f_ytrain = self.pickle_dir + self.pkl_name + '09_' + 'ytrain_' + 'split.pkl'
+        self.f_xval = self.pickle_dir + self.pkl_name + '09_' + 'xval_' + 'split.pkl'
+        self.f_yval = self.pickle_dir + self.pkl_name + '09_' + 'yval_' + 'split.pkl'
 
         # Extra Feat #
         # 01 PCA
         self.pca_xtrain = self.pickle_dir + self.pkl_name + '01_' + 'xtrain_' + 'pca.pkl'
         self.pca_xtest = self.pickle_dir + self.pkl_name + '01_' + 'xtest_' + 'pca.pkl'
 
-
-
         # self.imputation_stratergy = 'most_frequent'
 
 # TODO
+# Bayesean optimization SVM
+# Auto Encoder Feat Cat
+# Imbalance Learn
+# Check default values of RF and XGBoost
+
+
 # Finish Cat EDA
 
 # Feat 2

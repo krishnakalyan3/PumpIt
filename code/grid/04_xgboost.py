@@ -31,7 +31,7 @@ def grid_model(X, y, cv=5):
     clf = GridSearchCV(
         estimator=XGBClassifier(**params_fixed, seed=config.set_seed),
         param_grid=params_grid,
-        verbose=0,
+        verbose=config.verbose,
         cv=cv,
         scoring='accuracy'
     )
