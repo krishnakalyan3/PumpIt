@@ -6,3 +6,5 @@ library(DT)
 library(caTools)
 
 data <- readRDS(file="data/app_data.rds")
+data$date_recorded <- as.Date(data$date_recorded)
+#options(shiny.trace=TRUE)

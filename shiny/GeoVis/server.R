@@ -2,7 +2,11 @@
 
 function(input, output) {
   
+  
   status_filter <- reactive({
+    
+    filter_date <- data$date_recorded >= input$dater[1] & data$date_recorded<= input$dater[2]
+    data <- data[filter_date, ]
     data <- data[1:input$samples,]
     if(input$target == 'all'){
       data <- data
