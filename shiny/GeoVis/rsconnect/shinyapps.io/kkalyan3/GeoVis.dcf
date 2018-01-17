@@ -5,8 +5,8 @@ account: kkalyan3
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 256948
-bundleId: 1178448
+bundleId: 1178463
 url: https://kkalyan3.shinyapps.io/GeoVis/
-when: 1516115215.43058
+when: 1516115794.01231
 asMultiple: FALSE
 asStatic: FALSE

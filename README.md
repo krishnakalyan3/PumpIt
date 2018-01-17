@@ -11,3 +11,4 @@ SNo. | Model Type | Comments | Local Score | Public Score
 
 
 Lat Long [Visualization](https://kkalyan3.shinyapps.io/GeoVis/)
+Mini [Dashboard](https://kkalyan3.shinyapps.io/PumpIt/)
