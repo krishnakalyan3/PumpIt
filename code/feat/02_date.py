@@ -43,11 +43,30 @@ def join_df(left, right, left_on, right_on=None, suffix='_y'):
 
 
 def drop_cols(x_train, x_test):
-    # id is unique
+    # High cardinality
+        # id
+        # wpt_name
+        # subvillage
+        # ward
+        # scheme_name
+
     # recorded_by has 1 cardinality
     # quantity_group is similar to quantity
-    #
-    drop = ['status_group', 'id', 'quantity_group', 'recorded_by']
+    # similar columns according to the correlation plot
+        # region code, district code
+        # extraction type, extraction type group, extraction type class
+        # management, management group
+        # payment, payment_type
+        # source, source_type
+        # waterpoint_type, waterpoint_type_group
+        # missing_funder, missing_installer
+
+    # Stratergy if 3 correlated remove 2 last
+    # else remove 1 last
+
+    drop = ['status_group', 'id', 'quantity_group', 'recorded_by', 'district_code', 'extraction_type_group',
+            'extraction_type_class', 'management_group', 'payment_type', 'source_type', 'waterpoint_type_group',
+            'missing_installer', 'wpt_name', 'subvillage', 'date_recorded', 'ward', 'scheme_name']
     for i in drop:
         if i == 'status_group':
             x_train = x_train.drop(i, axis=1)

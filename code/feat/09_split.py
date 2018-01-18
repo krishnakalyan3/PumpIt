@@ -17,7 +17,6 @@ def join_split(X, y):
 
 
 # Try imbalance learn
-
 if __name__ == '__main__':
     train_x = read_data(config.e_xtrain)
     train_y = read_data(config.e_ytrain)

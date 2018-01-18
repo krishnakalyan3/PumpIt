@@ -58,6 +58,8 @@ class Param:
         # self.imputation_stratergy = 'most_frequent'
 
 # TODO
+# Number of days since data recorded
+# Construction Year
 # Bayesean optimization SVM
 # Auto Encoder Feat Cat
 # Imbalance Learn

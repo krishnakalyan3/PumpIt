@@ -24,6 +24,7 @@ def metrics(y, y_hat):
     f1 = f1_score(y, y_hat, average='weighted')
     print('{} F1'. format(f1))
     print('{} Accuracy'.format(accuracy))
+    return f1
 
 
 def submit(yhat, file_name):
