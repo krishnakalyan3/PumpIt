@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-./02_svm_grid.py &
+parallel=4
+
 ./02_svm_grid.py &
 ./02_svm_grid.py &
 ./02_svm_grid.py
